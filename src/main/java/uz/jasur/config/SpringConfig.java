@@ -5,6 +5,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.thymeleaf.spring5.SpringTemplateEngine;
@@ -13,6 +14,7 @@ import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 
 @Configuration
 @ComponentScan("uz.jasur")
+@PropertySource("classpath:application.properties")
 @EnableWebMvc
 public class SpringConfig {
     private final ApplicationContext applicationContext;
@@ -46,3 +48,4 @@ public class SpringConfig {
         registry.viewResolver(resolver);
     }
 }
+
